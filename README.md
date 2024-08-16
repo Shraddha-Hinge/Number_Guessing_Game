@@ -1,37 +1,40 @@
-# Tic-Tac-Toe Game
+# Number Guessing Game
 
-This C++ project implements a classic Tic-Tac-Toe game for two players. It provides a command-line interface where players can input their moves and play against each other. The project serves as an example of basic C++ programming concepts, including control structures, functions, arrays, and user input handling.
+This C++ project implements a simple number-guessing game where the player has to guess a secret number within a certain number of attempts. The game provides feedback to the player if their guess is too high or too low and allows the player to choose from different difficulty levels. This project is an example of basic C++ programming concepts, including loops, conditionals, random number generation, and user input handling.
 
 ## Table of Contents
 
 - [Introduction](#introduction)
 - [Components](#components)
-  - [Game Board](#game-board)
-  - [Player Actions](#player-actions)
-  - [Game Logic](#game-logic)
+  - [Game Flow](#game-flow)
+  - [Difficulty Levels](#difficulty-levels)
+  - [Feedback Mechanism](#feedback-mechanism)
 - [Usage](#usage)
 
 ## Introduction
 
-The Tic-Tac-Toe game is designed for two players to take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game. This project demonstrates fundamental C++ concepts and provides a simple, interactive game that can be played in the terminal.
+The "Guess the Number" game challenges the player to guess a randomly generated number between 1 and 100. Depending on the chosen difficulty level, the player has a limited number of guesses to find the secret number. The game continues until the player guesses correctly or runs out of attempts. The game also offers the option to play again or quit after each round.
 
 ## Components
 
-### Game Board
+### Game Flow
 
-- **Board Representation**: The game board is represented as a 3x3 grid of characters. Each cell can hold an 'X', 'O', or remain empty.
-- **Display**: The board is displayed after each move, showing the current state of the game.
+- **Initialization**: The game generates a random number between 1 and 100 at the start of each round.
+- **Player Input**: The player inputs their guess, and the program provides feedback based on whether the guess is correct, too high, or too low.
+- **Attempts**: The player has a limited number of guesses based on the selected difficulty level.
+- **End of Game**: The game ends either when the player guesses the correct number or when the number of remaining attempts reaches zero.
 
-### Player Actions
+### Difficulty Levels
 
-- **Input**: Players are prompted to enter the row and column where they want to place their mark ('X' or 'O').
-- **Validation**: The program checks if the chosen cell is within the valid range and if it is empty before accepting the move.
+- **Easy**: The player has 10 attempts to guess the number.
+- **Medium**: The player has 7 attempts to guess the number.
+- **Difficult**: The player has 5 attempts to guess the number.
 
-### Game Logic
+### Feedback Mechanism
 
-- **Win Conditions**: The game checks for a winning condition after each move, determining if any row, column, or diagonal has been completed by a player.
-- **Draw Condition**: If all cells are filled and no player has won, the game declares a draw.
-- **Toss**: The game includes a toss to decide which player will make the first move.
+- **Correct Guess**: If the player's guess matches the secret number, they win the game.
+- **Incorrect Guess**: The program informs the player whether the secret number is higher or lower than their guess.
+- **Remaining Attempts**: The number of guesses left is displayed after each incorrect attempt.
 
 ## Usage
 
@@ -40,8 +43,8 @@ To use this project, follow these steps:
 1. Ensure you have a C++ compiler installed on your system (e.g., GCC).
 2. Clone or download this repository.
 3. Navigate to the project directory in your terminal.
-4. Compile the project using `g++ -o tictactoe tictactoe.cpp` or similar commands.
-5. Run the executable `./tictactoe` to start the application.
-6. Input the names of both players when prompted.
-7. Follow the on-screen instructions to play the game, taking turns to input your moves.
-8. The game will declare the winner or a draw based on the gameplay.
+4. Compile the project using `g++ -o guessthenumber guessthenumber.cpp` or a similar command.
+5. Run the executable `./guessthenumber` to start the application.
+6. Choose the difficulty level when prompted.
+7. Input your guesses according to the feedback provided.
+8. Decide whether to play again or quit after each game.
